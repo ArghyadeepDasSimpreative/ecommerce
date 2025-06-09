@@ -6,6 +6,8 @@ import connectDB from "./config/connection.js";
 import authRoutes from "./routes/auth.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import brandRoutes from "./routes/brand.routes.js";
+import productRoutes from "./routes/product.routes.js";
 
 dotenv.config();
 
@@ -28,6 +30,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes);
 app.use("/categories", categoryRoutes);
 app.use("/users", userRoutes);
+app.use("/brands", brandRoutes);
+app.use("/products", productRoutes);
 
 // Connect DB and start server
 connectDB();
